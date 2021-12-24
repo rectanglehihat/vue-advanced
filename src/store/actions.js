@@ -2,7 +2,7 @@ import { fetchNewsList, fetchAskList, fetchJobsList } from '../api/index.js';
 
 export default {
   FETCH_NEWS(context) {
-    //mutations에 접근할 수 있는 인자
+    // context는 mutations에 접근할 수 있는 인자
     fetchNewsList()
       .then((response) => {
         // console.log(response);
