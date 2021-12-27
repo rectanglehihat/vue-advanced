@@ -10,7 +10,7 @@ import {
 export default {
   // FETCH_NEWS(context) {
   //   // context는 mutations에 접근할 수 있는 인자
-  //   fetchNewsList()
+  //   return fetchNewsList()
   //     .then((response) => {
   //       // console.log(response);
   //       context.commit('SET_NEWS', response.data);
@@ -21,7 +21,7 @@ export default {
   //     });
   // },
   // FETCH_ASKS({ commit }) {
-  //   fetchAskList()
+  //   return fetchAskList()
   //     .then(({ data }) => {
   //       // console.log(response);
   //       // console.log(context);
@@ -32,7 +32,7 @@ export default {
   //     });
   // },
   // FETCH_JOBS({ commit }) {
-  //   fetchJobsList()
+  //   return fetchJobsList()
   //     .then(({ data }) => {
   //       // console.log(response);
   //       commit('SET_JOBS', data);
@@ -42,7 +42,7 @@ export default {
   //     });
   // },
   FETCH_USER({ commit }, username) {
-    fetchUserInfo(username)
+    return fetchUserInfo(username)
       .then(({ data }) => {
         commit('SET_USER', data);
       })
@@ -51,7 +51,7 @@ export default {
       });
   },
   FETCH_ITEM({ commit }, item) {
-    fetchItem(item)
+    return fetchItem(item)
       .then(({ data }) => {
         commit('SET_ITEM', data);
       })
@@ -60,8 +60,9 @@ export default {
       });
   },
   FETCH_LIST({ commit }, pageName) {
-    fetchList(pageName)
+    return fetchList(pageName)
       .then(({ data }) => {
+        // console.log(4);
         commit('SET_LIST', data);
       })
       .catch((error) => {
