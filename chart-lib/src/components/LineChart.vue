@@ -1,12 +1,10 @@
 <template>
   <div>
-    <canvas id="lineChart" width="400" height="400"></canvas>
+    <canvas ref="lineChart" id="lineChart"></canvas>
   </div>
 </template>
 
 <script>
-  import Chart from 'chart.js/auto';
-
   export default {
     mounted() {
       const labels = ['January', 'February', 'March', 'April', 'May', 'June'];
@@ -30,7 +28,8 @@
       };
       console.log(config);
 
-      const myChart = new Chart(document.getElementById('lineChart'), config);
+      // const myChart = new Chart(document.getElementById('lineChart'), config);
+      const myChart = new this.$_Chart(this.$refs.lineChart, config);
       console.log(myChart);
     },
   };

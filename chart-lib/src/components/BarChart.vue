@@ -1,16 +1,13 @@
 <template>
   <div>
-    <canvas id="barChart" width="400" height="400"></canvas>
+    <canvas ref="barChart" id="barChart" width="400" height="400"></canvas>
   </div>
 </template>
 
 <script>
-  import Chart from 'chart.js/auto';
-
   export default {
     mounted() {
-      const ctx = document.getElementById('barChart');
-      const myChart = new Chart(ctx, {
+      const myChart = new this.$_Chart(this.$refs.barChart, {
         type: 'bar',
         data: {
           labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
