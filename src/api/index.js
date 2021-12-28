@@ -14,20 +14,40 @@ function fetchAskList() {
   return axios.get(`${config.baseUrl}ask/1.json`);
 }
 
-function fetchJobsList() {
-  return axios.get(`${config.baseUrl}jobs/1.json`);
+async function fetchJobsList() {
+  try {
+    const response = await axios.get(`${config.baseUrl}jobs/1.json`);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-function fetchList(pageName) {
-  return axios.get(`${config.baseUrl}${pageName}/1.json`);
+async function fetchList(pageName) {
+  try {
+    const response = await axios.get(`${config.baseUrl}${pageName}/1.json`);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-function fetchUserInfo(username) {
-  return axios.get(`${config.baseUrl}user/${username}.json`);
+async function fetchUserInfo(username) {
+  try {
+    const response = await axios.get(`${config.baseUrl}user/${username}.json`);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-function fetchItem(item) {
-  return axios.get(`${config.baseUrl}item/${item}.json`);
+async function fetchItem(item) {
+  try {
+    const response = await axios.get(`${config.baseUrl}item/${item}.json`);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export {
